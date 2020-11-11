@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive landing page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
@@ -15,16 +17,35 @@
     
     <header>
         <nav>
-            <ul>
+            <img src="../assets/images/logo.png" alt="Logo" class="header-logo">
+            <ul class="desktop-menu">
                 <li>One</li>
                 <li>Two</li>
                 <li>Three</li>
             </ul>
+            <button class="button-open-mobile-menu"><img src="../assets/images/hamburger-menu.png" alt="Hamburger menu"></button>
         </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li>Features</li>
+                <li>Partners</li>
+                <li>Support</li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <button class="button-close-mobile-menu">&times;</button>
+            </div>
+        </div>
     </header>
 
     <div class="landing-page">
-        <h1>Landing page</h1>
+        <div class="landing-page-info">
+            <h1>Anskarg</h1>
+            <h2>
+                We are a fictional tech startup company. <br>
+                We design, create and develop web applications for clients around the world.
+            </h2>
+            <button>Learn more</button>
+        </div>
     </div>
 
 </body>
