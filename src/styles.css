@@ -91,7 +91,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: open-mobile-menu 0.3s ease-out forwards;
+    animation: open-mobile-menu 0.6s cubic-bezier(.28, .64, .81, .74) forwards;
 }
 
 @keyframes open-mobile-menu {
@@ -99,18 +99,36 @@ nav {
     to { height: 50vh; }
 }
 
-.mobile-menu ul {
+.mobile-menu-items {
+    position: relative;
     margin-top: 40px;
+    opacity: 0;
+    top: -30px;
 }
 
-.mobile-menu ul li {
+.mobile-menu-items li {
     margin-bottom: 20px;
     font-size: 1.5em;
     font-weight: 700;
 }
 
-.mobile-menu ul li:last-of-type {
+.mobile-menu-items li:last-of-type {
     margin-bottom: 0;
+}
+
+.display-mobile-menu-items {
+    animation: display-mobile-menu-items 0.4s linear forwards;
+}
+
+@keyframes display-mobile-menu-items {
+    from { 
+        top: -30px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 .mobile-menu-footer {
@@ -155,11 +173,17 @@ nav {
     display: flex;
     flex-direction: column;
     background-color: #242424;
-    background-image: url('../assets/wave-background.svg');
-    background-repeat: no-repeat;
-    background-position-y: bottom;
     padding: 0 20px;
     color: #ebebeb;
+}
+
+.blur-landing-page {
+    animation: blur-landing-page 0.6s linear forwards;
+}
+
+@keyframes blur-landing-page {
+    from { filter: blur(0px); }
+    to { filter: blur(4px); }
 }
 
 .landing-page-info {
