@@ -104,6 +104,7 @@ nav {
     margin-top: 40px;
     opacity: 0;
     top: -30px;
+    text-align: center;
 }
 
 .mobile-menu-items li {
@@ -213,4 +214,45 @@ nav {
 
 .landing-page-info button:hover {
     background-color: rgba(18, 136, 108, 0.8);
+}
+
+
+/* Media queries */
+
+@media (min-width: 700px) {
+
+    .button-open-mobile-menu {
+        display: none;
+    }
+
+    nav {
+        padding: 30px 60px;
+    }
+
+    .header-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+    }
+    
+    .desktop-menu li {
+        padding: 8px 16px;
+        margin-right: 10px;
+        font-size: 0.9em;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in;
+    }
+
+    .desktop-menu li:last-of-type {
+        margin-right: 0;
+    }
+
+    .desktop-menu li:hover {
+        background-color: var(--green-color);
+    }
+
 }
