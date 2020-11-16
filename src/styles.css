@@ -212,7 +212,9 @@ nav {
     display: none;
 }
 
-
+.landing-page-footer {
+    display: none;
+}
 
 
 /* Media queries */
@@ -258,7 +260,15 @@ nav {
     .landing-page {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        padding: 200px 120px 0 120px;
+        grid-template-areas: "landing-info landing-art"
+                             "landing-footer landing-footer";
+        padding: 150px 120px 0 120px;
+        /* border: 1px solid red; */
+    }
+
+    .landing-page-info {
+        /* border: 1px solid blue; */
+        grid-area: landing-info;
     }
 
     .landing-page-info h1 {
@@ -279,6 +289,7 @@ nav {
 
     .landing-page-art {
         display: block;
+        grid-area: landing-art;
     }
 
     .landing-page-art img:first-of-type {
@@ -295,5 +306,58 @@ nav {
         left: 25px;
     }
 
+    .landing-page-footer {
+        /* border: 1px solid green; */
+        grid-area: landing-footer;
+        display: grid;
+        grid-template-columns: 26% 37% 37%;
+        margin-bottom: 60px;
+    }
+
+    .landing-page-footer > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* border: 1px solid red; */
+    }
+
+    .landing-page-footer > div h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        position: relative;
+        left: 10px;
+    }
+
+    .landing-page-footer > div h1::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        width: 5px;
+        height: 100%;
+        border-radius: 5px;
+        background-color: var(--green-color);
+    }
+
+    .landing-page-footer > div h2 {
+        font-size: 1.2em;
+        font-weight: 400;
+        line-height: 26px;
+        width: 85%;
+    }
+
+    .landing-page-footer > div:nth-of-type(1) {
+        position: relative;
+        align-items: center;
+    }
+
+    .landing-page-footer > div:nth-of-type(1) img {
+        /* position: absolute; */
+        /* width: 220px; */
+    }
+
+    .landing-page-footer > div:nth-of-type(2),
+    .landing-page-footer > div:nth-of-type(3) {
+        padding: 0 60px;
+    }
 
 }
