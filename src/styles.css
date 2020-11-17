@@ -262,18 +262,18 @@ nav {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "landing-info landing-art"
                              "landing-footer landing-footer";
-        padding: 150px 120px 0 120px;
-        /* border: 1px solid red; */
+        padding: 150px 0px 0 0px;
+        z-index: 1;
     }
 
     .landing-page-info {
         /* border: 1px solid blue; */
         grid-area: landing-info;
+        padding: 0 200px;
     }
 
     .landing-page-info h1 {
         font-size: 4em;
-        width: 70%;
     }
 
     .landing-page-info h2 {
@@ -288,30 +288,24 @@ nav {
     }
 
     .landing-page-art {
-        display: block;
         grid-area: landing-art;
+        /* border: 1px solid red; */
+        display: block;
     }
 
-    .landing-page-art img:first-of-type {
-        width: 330px;
+    .landing-page-art img {
         position: relative;
-        top: -10px;
-        left: 10px;
-    }
-
-    .landing-page-art img:last-of-type {
-        width: 160px;
-        position: relative;
-        top: 35px;
-        left: 25px;
+        left: 160px;
+        top: 60px;
     }
 
     .landing-page-footer {
-        /* border: 1px solid green; */
+        /* border: 5px solid green; */
         grid-area: landing-footer;
         display: grid;
         grid-template-columns: 26% 37% 37%;
-        margin-bottom: 60px;
+        /* margin-bottom: 60px; */
+        padding: 0 120px;
     }
 
     .landing-page-footer > div {
@@ -358,6 +352,23 @@ nav {
     .landing-page-footer > div:nth-of-type(2),
     .landing-page-footer > div:nth-of-type(3) {
         padding: 0 60px;
+    }
+
+    .first-abstract-shape,
+    .second-abstract-shape {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .first-abstract-shape {
+        right: 0;
+        transform: scale(2.5);
+    }
+
+    .second-abstract-shape {
+        top: 50%;
+        left: -160px;
+        transform: scale(5);
     }
 
 }
