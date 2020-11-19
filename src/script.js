@@ -59,11 +59,16 @@ window.addEventListener('scroll', () => {
     const amountScrolled = window.scrollY;
     if (amountScrolled > 1) {
         header.classList.add('header-active');
-        nav.style.border = '2px solid red';
-        // navbar.classList.add('nav-active');
     } else {
         header.classList.remove('header-active');
-        // navbar.classList.remove('nav-active');
-        nav.style.border = 'none';
     }
 });
+
+
+
+
+function fixViewHeightOnMobile() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+
+fixViewHeightOnMobile();

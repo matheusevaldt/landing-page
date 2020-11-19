@@ -39,8 +39,9 @@ button {
     cursor: pointer;
 }
 
-.landing-pagee {
+.landing-page-wrapper {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -269,7 +270,6 @@ nav {
     nav {
         padding: 30px 40px;
         transition: padding 0.3s ease-out;
-        border: 1px solid;
     }
 
     .header-logo {
@@ -341,7 +341,6 @@ nav {
 
     .landing-page-footer {
         margin-top: 60px;
-        /* border: 1px solid green; */
         grid-area: landing-footer;
         display: grid;
         grid-template-areas: "footer-image footer-text-one"
@@ -409,167 +408,115 @@ nav {
 }
 
 @media (min-width: 1360px) {
-    .landing-page {
-        border: 5px solid red;
+
+
+    header {
+        margin-bottom: 35px;
     }
+
+    nav {
+        padding: 20px 60px;
+    }
+    
+    .desktop-menu li {
+        margin-right: 10px;
+    }
+
+    .landing-page {
+        padding: 0 120px;
+    }
+
+    .landing-page-info h1 {
+        font-size: 2em;
+    }
+
+    .landing-page-info h2 {
+        font-size: 1em;
+        line-height: 28px;
+    }
+
+    .button-learn-more {
+        font-size: 0.95em;
+    }
+
+    .landing-page-art img {
+        width: 240px;
+    }
+
+    .landing-page-footer {
+        margin-top: 50px;
+    }
+
+    .landing-page-footer > div h1 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+
+    .landing-page-footer > div h2 {
+        font-size: 0.95em;
+        line-height: normal;
+        width: 100%;
+    }
+
+    .first-abstract-shape {
+        transform: scale(2.6);
+    }
+    
+    .second-abstract-shape {
+        bottom: -100px;
+        left: -80px;
+        transform: scale(5);
+    }
+
 }
-
-
-
 
 
 @media (min-width: 1600px) {
 
-
-
-    /* .button-open-mobile-menu {
-        display: none;
-    } */
-
-    /* nav {
-        padding: 30px 60px;
-        transition: padding 0.3s ease-out;
-    } */
-
-    /* .nav-active {
-        padding: 15px 60px;
-    } */
-
-    /* .header-logo {
-        width: 48px;
-        height: 48px;
-        cursor: pointer;
+    header {
+        margin-bottom: 80px;
     }
 
-    .desktop-menu {
-        display: flex;
-        align-items: center;
-    } */
-    
-    /* .desktop-menu li {
-        margin-right: 10px;
-    } */
-
-    /* .desktop-menu li:last-of-type {
-        margin-right: 0;
-    } */
-
-    /* .desktop-menu li:hover,
-    .menu-active {
-        background-color: var(--green-color);
-    } */
-
-    /* .landing-page {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "landing-info landing-art"
-                             "landing-footer landing-footer";
-        padding: 150px 0px 0 0px;
-        z-index: 1;
-    } */
-
-    /* .landing-page-info {
-        border: 1px solid blue;
-        grid-area: landing-info;
-        padding: 0 200px;
+    .landing-page {
+        padding: 0 160px;
     }
 
     .landing-page-info h1 {
-        font-size: 4em;
+        font-size: 3em;
+        width: 50%;
     }
 
     .landing-page-info h2 {
-        font-size: 1.3em;
-        width: 520px;
-        line-height: 34px;
-        margin: 10px 0 20px 0;
+        font-size: 1.2em;
+        line-height: 30px;
+        width: 80%;
     }
 
-    .landing-page-info h2 span {
-        display: inline; 
-    } */
-
-    /* .landing-page-art {
-        grid-area: landing-art;
-        border: 1px solid red;
-        display: block;
+    .button-learn-more {
+        font-size: 1em;
     }
 
     .landing-page-art img {
-        position: relative;
-        left: 160px;
-        top: 60px;
-    } */
-
-    /* .landing-page-footer {
-        border: 5px solid green;
-        grid-area: landing-footer;
-        display: grid;
-        grid-template-columns: 26% 37% 37%;
-        padding: 0 120px;
+        width: auto;
     }
 
-    .landing-page-footer > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border: 1px solid red;
-    } */
-
-    /* .landing-page-footer > div h1 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-        position: relative;
-        left: 10px;
+    .landing-page-footer {
+        margin-top: 100px;
     }
 
-    .landing-page-footer > div h1::before {
-        content: '';
-        position: absolute;
-        left: -10px;
-        width: 5px;
-        height: 100%;
-        border-radius: 5px;
-        background-color: var(--green-color);
+    .landing-page-footer > div h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
     }
 
     .landing-page-footer > div h2 {
         font-size: 1.2em;
-        font-weight: 400;
-        line-height: 26px;
-        width: 85%;
-    }
-
-    .landing-page-footer > div:nth-of-type(1) {
-        position: relative;
-        align-items: center;
-    }
-
-    .landing-page-footer > div:nth-of-type(1) img {
-        position: absolute;
-        width: 220px;
-    }
-
-    .landing-page-footer > div:nth-of-type(2),
-    .landing-page-footer > div:nth-of-type(3) {
-        padding: 0 60px;
-    }
-
-    .first-abstract-shape,
-    .second-abstract-shape {
-        position: absolute;
-        z-index: -1;
+        width: 70%;
+        line-height: 28px;
     }
 
     .first-abstract-shape {
-        right: 0;
-        transform: scale(2.5);
+        transform: scale(3.5);
     }
-
-    .second-abstract-shape {
-        top: 50%;
-        left: -160px;
-        transform: scale(5);
-    } */
 
 }
