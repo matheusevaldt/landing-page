@@ -59,8 +59,10 @@ window.addEventListener('scroll', () => {
     const amountScrolled = window.scrollY;
     if (amountScrolled > 1) {
         header.classList.add('header-active');
+        nav.classList.add('nav-active');
     } else {
         header.classList.remove('header-active');
+        nav.classList.remove('nav-active');
     }
 });
 
