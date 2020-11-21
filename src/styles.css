@@ -21,8 +21,6 @@
 
 :root {
     --green-color: #15C39A;
-    --blue-color: #409AF2;
-    --purple-color: #BA78ED;
 }
 
 ul {
@@ -32,6 +30,7 @@ ul {
 body {
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    background-color: #242424;
 }
 
 button {
@@ -40,6 +39,7 @@ button {
 }
 
 .landing-page-wrapper {
+    padding-top: 50px;
     position: relative;
     z-index: 1;
     height: 100vh;
@@ -53,10 +53,13 @@ button {
 }
 
 header {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    height: 70px;
+    display: flex;
+    align-items: center;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 5;
     background-color: transparent;
     transition: all 0.3s linear;
 }
@@ -67,6 +70,7 @@ header {
 }
 
 nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -234,7 +238,7 @@ nav {
     position: absolute;
     /* border-top: 1px solid red;
     border-right: 1px solid red; */
-    top: 0px;
+    top: -70px;
     right: 0px;
     z-index: -1;
     transform: scale(0.6);
@@ -255,18 +259,17 @@ nav {
     padding: 40px 25px;
     background-color: #474747;
     color: #ebebeb;
+    text-align: center;
 }
 
 .projects-title {
     font-size: 1.4em;
-    text-align: center;
     margin-bottom: 3px;
 }
 
 .projects-subtitle {
     font-size: 1em;
     font-weight: 400;
-    text-align: center;
 }
 
 .project-wrapper {
@@ -321,6 +324,7 @@ nav {
     padding: 20px 25px;
     background-color: #fff;
     color: #2b2839;
+    text-align: left;
 }
 
 .project-place {
@@ -335,6 +339,21 @@ nav {
 
 .project-description {
     line-height: 22px;
+}
+
+.projects button {
+    margin-top: 40px;
+}
+
+.projects button,
+.partners button {
+    padding: 10px 15px;
+    border: 1px solid #242424;
+    border-bottom: 3px solid #242424;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ebebeb;
+    font-weight: 700;
 }
 
 .partners {
@@ -371,26 +390,16 @@ nav {
     margin: 10px 0;
 }
 
-.partners button {
-    padding: 10px 15px;
-    border: 1px solid #242424;
-    border-bottom: 2px solid #242424;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #ebebeb;
-    font-weight: 700;
-}
-
 .discord {
     color: #ebebeb;
     background-color: #474747;
-    padding: 30px 30px 0 30px;
+    padding: 40px 30px 0 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     overflow: hidden;
 }
 
@@ -406,11 +415,7 @@ nav {
 
 .discord h1 {
     font-size: 1.2em;
-    margin-bottom: 6px;
-}
-
-.discord p {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .discord p span {
@@ -433,12 +438,12 @@ nav {
 .discord button {
     padding: 10px 15px;
     border: 1px solid #242424;
-    border-bottom: 2px solid #242424;
+    border-bottom: 3px solid #242424;
     border-radius: 5px;
     background-color: transparent;
     color: #ebebeb;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin: 30px 0;
 }
 
 .founders {
@@ -462,7 +467,12 @@ nav {
 
 .founders-message h1 {
     font-size: 1.4em;
-    margin: 15px 0 20px 0;
+    margin: 20px 0;
+}
+
+.founders-message h1 span {
+    position: relative;
+    top: -1px;
 }
 
 .founders-message p {
@@ -484,10 +494,6 @@ nav {
     left: 0px;
     background-color: var(--green-color);
     border-radius: 10px;
-}
-
-.founders-connect {
-    
 }
 
 .founders-picture {
@@ -520,14 +526,14 @@ nav {
 .founders-connect h1 {
     font-size: 1em;
     font-weight: 400;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .founders-connect button {
     padding: 10px 0;
     width: 250px;
     border: 1px solid #242424;
-    border-bottom: 2px solid #242424;
+    border-bottom: 3px solid #242424;
     border-radius: 5px;
     background-color: transparent;
     color: #ebebeb;
@@ -548,9 +554,13 @@ footer {
 
 @media (min-width: 760px) {
 
-    header {
-        margin-bottom: 90px;
+    .landing-page-wrapper {
+        padding-top: 90px;
     }
+
+    /* header {
+        margin-bottom: 90px;
+    } */
 
     .button-open-mobile-menu {
         display: none;
@@ -577,6 +587,7 @@ footer {
         font-size: 0.9em;
         cursor: pointer;
         transition: background-color 0.3s ease-in;
+        color: #ebebeb;
     }
 
     .desktop-menu li:last-of-type {
@@ -696,10 +707,13 @@ footer {
 
 @media (min-width: 1360px) {
 
-
-    header {
-        margin-bottom: 55px;
+    .landing-page-wrapper {
+        padding-top: 55px;
     }
+
+    /* header {
+        margin-bottom: 55px;
+    } */
 
     nav {
         padding: 10px 60px;
@@ -759,9 +773,13 @@ footer {
 
 @media (min-width: 1600px) {
 
-    header {
-        margin-bottom: 100px;
+    .landing-page-wrapper {
+        padding-top: 100px;
     }
+
+    /* header {
+        margin-bottom: 100px;
+    } */
 
     .landing-page {
         padding: 0 160px;

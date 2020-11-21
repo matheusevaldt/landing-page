@@ -60,9 +60,13 @@ window.addEventListener('scroll', () => {
     if (amountScrolled > 1) {
         header.classList.add('header-active');
         nav.classList.add('nav-active');
+        if (amountScrolled > 450) {
+            header.classList.add('header-remain-sticky');
+        }
     } else {
         header.classList.remove('header-active');
         nav.classList.remove('nav-active');
+        header.classList.remove('header-remain-sticky');
     }
 });
 
