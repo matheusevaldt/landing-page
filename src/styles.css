@@ -134,6 +134,7 @@ nav {
     font-size: 1.5em;
     font-weight: 700;
     opacity: 0;
+    color: #ebebeb;
 }
 
 .mobile-menu-items li:last-of-type {
@@ -545,7 +546,110 @@ nav {
 }
 
 footer {
-    padding: 30px;
+    padding: 30px 30px 0 30px;
+    background-color: #474747;
+    color: #ebebeb;
+    border-bottom: 5px solid var(--green-color);
+}
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.footer-newsletter h1 {
+    font-size: 1.1em;
+    margin-bottom: 7px;
+}
+
+.footer-newsletter h2 {
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #c5c5c5;
+}
+
+.footer-newsletter input {
+    padding: 15px;
+    width: 90%;
+    border: 2px solid #242424;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: border-color 0.3s linear;
+}
+
+.footer-newsletter button {
+    padding: 12px 25px;
+    font-size: 0.9em;
+    font-weight: 700;
+    background-color: var(--green-color);
+    color: #ebebeb;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-newsletter input:hover {
+    border-color: #474747;
+}
+
+/* Add hover on the subscribe button */
+
+.footer-socials,
+.footer-help {
+    margin-bottom: 40px;
+}
+
+.footer-socials h1,
+.footer-help h1{
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.footer-socials h2,
+.footer-help h2 {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #bebebe;
+    transition: color 0.3s linear;
+}
+
+.footer-socials h2:last-of-type,
+.footer-help h2:last-of-type {
+    margin-bottom: 0;
+}
+
+.footer-socials h2:hover,
+.footer-help h2:hover {
+    color: #ebebeb;
+    text-decoration: underline;
+}
+
+.footer-company {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer-company img {
+    width: 56px;
+    margin-bottom: 8px;
+}
+
+.footer-company figcaption {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.footer-copyright {
+    border-top: 1px solid rgba(191, 191, 191, 0.2);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-copyright p {
+    font-size: 0.85em;
 }
 
 

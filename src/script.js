@@ -73,8 +73,19 @@ window.addEventListener('scroll', () => {
 
 
 
+
+
+
 function fixViewHeightOnMobile() {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 }
 
+function setCopyrightYear() {
+    const copyrightYear = document.querySelector('.copyright-year');
+    const date = new Date();
+    const currentYear = date.getFullYear();
+    copyrightYear.innerHTML = currentYear;
+}
+
 fixViewHeightOnMobile();
+setCopyrightYear();
