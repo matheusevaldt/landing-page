@@ -6,13 +6,26 @@ const buttonOpenMobileMenu = document.querySelector('.button-open-mobile-menu');
 const buttonCloseMobileMenu = document.querySelector('.button-close-mobile-menu');
 const mobileMenuItems = document.querySelector('.mobile-menu-items');
 const mobileMenuOuter = document.querySelector('.mobile-menu-outer');
+let currentNotification;
 
 // Event listeners.
 buttonOpenMobileMenu.addEventListener('click', openMobileMenu);
 buttonCloseMobileMenu.addEventListener('click', closeMobileMenu);
 mobileMenuOuter.addEventListener('click', closeMobileMenu);
 
-// 
+// Functions to be executed when the page is being loaded.
+(function() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixViewHeightOnMobile);
+        document.addEventListener('DOMContentLoaded', setCopyrightYear);
+    } else {
+        fixViewHeightOnMobile();
+        setCopyrightYear();
+    }
+})();
+
+// Display the mobile menu.
+// Display, in order, the items that are in the mobile menu.
 function openMobileMenu() {
     mobileMenu.classList.add('open-mobile-menu');
     displayMobileMenuItems();
@@ -34,7 +47,8 @@ function displayMobileMenuItems() {
     }
 }
 
-// 
+// Close the mobile menu;
+// Set the mobile menu to default state.
 function closeMobileMenu() {
     mobileMenu.classList.remove('open-mobile-menu');
     clearMobileMenu();
@@ -48,44 +62,36 @@ function clearMobileMenu() {
     buttonCloseMobileMenu.classList.remove('display-button-close-mobile-menu');
 }
 
+// Whenever the user clicks in a button or a link, it will display a notification.
+window.addEventListener('click', event => {
+    const notification = document.querySelector('.notification');
+    const element = event.target.classList;
+    if (element.contains('no-destination')) {
+        clearTimeout(currentNotification);
+        notification.classList.add('display-notification');
+        currentNotification = setTimeout(() => notification.classList.remove('display-notification'), 4000);
+    }
+})
 
-
-
-
-
-
-
+// Add a new style to the header if the page has been scrolled.
 window.addEventListener('scroll', () => {
     const amountScrolled = window.scrollY;
     if (amountScrolled > 1) {
         header.classList.add('header-active');
-        nav.classList.add('nav-active');
-        if (amountScrolled > 450) {
-            header.classList.add('header-remain-sticky');
-        }
     } else {
         header.classList.remove('header-active');
-        nav.classList.remove('nav-active');
-        header.classList.remove('header-remain-sticky');
     }
 });
 
-
-
-
-
-
-
+// Adjust the viewheight for mobile devices.
 function fixViewHeightOnMobile() {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 }
 
+// Set the current year in the copyright message.
 function setCopyrightYear() {
     const copyrightYear = document.querySelector('.copyright-year');
     const date = new Date();
     const currentYear = date.getFullYear();
     copyrightYear.innerHTML = currentYear;
 }
-
-fixViewHeightOnMobile();
-setCopyrightYear();
