@@ -101,7 +101,6 @@ nav {
     left: 0;
     width: 100%;
     height: 100vh;
-    border: 6px solid red;
 }
 
 .open-mobile-menu {
@@ -336,6 +335,7 @@ nav {
 .project-footer h1 {
     font-size: 1.1em;
     margin: 10px 0;
+    cursor: pointer;
 }
 
 .project-description {
@@ -343,12 +343,12 @@ nav {
 }
 
 .projects button {
-    margin-top: 40px;
+    margin-top: 37px;
 }
 
 .projects button,
 .partners button {
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: 1px solid #242424;
     border-bottom: 3px solid #242424;
     border-radius: 5px;
@@ -394,7 +394,7 @@ nav {
 .discord {
     color: #ebebeb;
     background-color: #474747;
-    padding: 40px 30px 0 40px;
+    padding: 40px 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -411,7 +411,6 @@ nav {
     z-index: -1;
     transform: scale(0.6) translate(-50%, -50%);
     transform-origin: left top;
-    /* border: 1px solid; */
 }
 
 .discord h1 {
@@ -437,7 +436,7 @@ nav {
 }
 
 .discord button {
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: 1px solid #242424;
     border-bottom: 3px solid #242424;
     border-radius: 5px;
@@ -480,6 +479,10 @@ nav {
     line-height: 22px;
 }
 
+.founders-message img {
+    display: none;
+}
+
 .highlighted-message {
     margin: 15px 0;
     padding-left: 20px;
@@ -512,7 +515,7 @@ nav {
     border: 4px solid #fff;
     border-radius: 5px;
     transform: rotate(3deg);
-    box-shadow: 0 0px 8px 1px #8a8a8a;
+    box-shadow: 0 0px 8px 1px #7c7c7c;
 }
 
 .founders-picture figure figcaption {
@@ -528,6 +531,13 @@ nav {
     font-size: 1em;
     font-weight: 400;
     margin-bottom: 10px;
+}
+
+.founders-connect h1 span {
+    color: var(--green-color);
+    font-weight: 700;
+    font-size: 1em;
+    margin-right: 5px;
 }
 
 .founders-connect button {
@@ -574,7 +584,7 @@ footer {
 .footer-newsletter input {
     padding: 15px;
     width: 90%;
-    border: 2px solid #242424;
+    border: 3px solid #353535;
     margin-bottom: 10px;
     border-radius: 5px;
     font-size: 0.9em;
@@ -591,11 +601,10 @@ footer {
     border-radius: 5px;
 }
 
-.footer-newsletter input:hover {
+.footer-newsletter input:hover,
+.footer-newsletter input:focus {
     border-color: #474747;
 }
-
-/* Add hover on the subscribe button */
 
 .footer-socials,
 .footer-help {
@@ -614,6 +623,7 @@ footer {
     margin-bottom: 15px;
     color: #bebebe;
     transition: color 0.3s linear;
+    cursor: pointer;
 }
 
 .footer-socials h2:last-of-type,
@@ -807,6 +817,51 @@ footer {
         transform: scale(3);
     }
 
+    .project-wrapper {
+        width: 65%;
+        margin: 20px auto 0 auto;
+    }
+
+    .founders {
+        padding: 30px 20%;
+    }
+
+    footer {
+        display: grid;
+        grid-template-areas: 
+        "newsletter newsletter"
+        "socials footer-help"
+        "company company"
+        "copyright copyright";
+    }
+
+    .footer-newsletter {
+        grid-area: newsletter;
+        width: 70%;
+        margin: 0 auto 40px auto;
+    }
+
+    .footer-socials {
+        grid-area: socials;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .footer-help {
+        grid-area: footer-help;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .footer-company {
+        grid-area: company;
+        margin-top: 40px;
+    }
+
+    .footer-copyright {
+        grid-area: copyright;
+    }
+
 }
 
 @media (min-width: 1360px) {
@@ -872,6 +927,184 @@ footer {
         transform: scale(3);
     }
 
+    .projects {
+        padding: 50px 60px;
+        display: grid;
+        grid-template-areas:
+        ". projects-title ."
+        ". projects-subtitle ."
+        "project-one project-two project-three"
+        ". show-more-projects .";
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+    }
+
+    .projects-title {
+        grid-area: projects-title;
+    }
+
+    .projects-subtitle {
+        grid-area: projects-subtitle;
+        margin-bottom: 30px;
+    }
+
+    .project-wrapper {
+        width: 100%;
+        margin: 0;
+    }
+
+    .project-wrapper:nth-of-type(1) {
+        grid-area: project-one;
+        margin: 0;
+    }
+
+    .project-wrapper:nth-of-type(2) {
+        grid-area: project-two;
+    }
+
+    .project-wrapper:nth-of-type(3) {
+        grid-area: project-three;
+    }
+
+    .project-footer h1 {
+        transition: color 0.3s linear;
+    }
+
+    .project-footer h1:hover {
+        color: #5c5c5c;
+    }
+
+    .projects button {
+        grid-area: show-more-projects;
+        width: auto;
+        margin: 40px auto 0 auto;
+    }
+
+    .partners {
+        padding: 40px 60px;
+    }
+
+    .partners div {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .partners div img {
+        width: 128px;
+    }
+
+    .partners div img:nth-of-type(3) {
+        width: 90px;
+        margin: 0;
+    }
+
+    .projects button,
+    .partners button,
+    .discord button,
+    .founders-connect button {
+        transition: background-color 0.3s linear;
+    }
+
+    .projects button:hover,
+    .discord button:hover {
+        background-color: #5c5c5c;
+    }
+
+    .partners button:hover,
+    .founders-connect button:hover {
+        background-color: #474747;
+    }
+
+    .discord h1 {
+        margin-bottom: 15px;
+    }
+
+    .discord svg {
+        transform: scale(0.8) translate(-50%, -50%);
+    }
+
+    .founders {
+        padding: 50px 60px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .founders-message {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 20px;
+    }
+
+    .founders-message img {
+        display: block;
+        width: auto;
+        margin: 20px auto 0 auto;
+    }
+
+    .founders-connect {
+        text-align: center;
+    }
+
+    .founders-picture {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .founders-picture figure img {
+        width: 60%;
+        transform: rotate(1deg);
+        border-width: 3px;
+        position: relative;
+        top: 15px;
+    }
+
+    .founders-picture figure figcaption {
+        position: relative;
+        right: auto;
+        bottom: 20px;
+    }
+
+    .founders-connect h1 {
+        margin-bottom: 12px;
+    }
+
+    .founders-connect button:first-of-type {
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
+
+    footer {
+        padding: 50px 60px 0 60px;
+        grid-template-areas: 
+        "newsletter socials footer-help"
+        "company company company"
+        "copyright copyright copyright";
+        grid-template-columns: 50% 25% 25%;
+    }
+    
+    .footer-newsletter {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .footer-newsletter button {
+        transition: background-color 0.3s linear;
+    }
+
+    .footer-newsletter button:hover {
+        background-color: #039B77;
+    }
+
+    .footer-company {
+        margin: 60px 0;
+    }
+
+    .footer-copyright p {
+        font-size: 0.8em;
+    }
+
 }
 
 
@@ -929,6 +1162,82 @@ footer {
 
     .second-abstract-shape {
         transform: scale(4.1);
+    }
+
+    .projects {
+        padding: 60px 160px;
+    }
+
+    .projects-title,
+    .partners h1,
+    .discord h1 {
+        font-size: 1.6em;
+    }
+
+    .projects-subtitle,
+    .partners h2 {
+        font-size: 1.1em;
+    }
+
+    .projects-title,
+    .partners h1 {
+        margin-bottom: 5px;
+    }
+
+    .partners {
+        padding: 50px 160px;
+    }
+
+    .discord {
+        padding: 50px 0 0 0;
+    }
+
+    .founders {
+        padding: 50px 160px;
+    }
+
+    .founders-message h2 {
+        font-size: 0.9em;
+    }
+
+    .founders-message h1 {
+        font-size: 1.6em;
+    }
+
+    .founders-message h1 span {
+        top: -2px;
+    }
+
+    .highlighted-message {
+        margin: 20px 0;
+    }
+
+    .founders-message img {
+        margin: 30px auto 0 auto;
+    }
+
+    .founders-picture {
+        margin-bottom: 15px;
+    }
+
+    .founders-picture figure img {
+        width: 55%;
+    }
+
+    footer {
+        padding: 50px 160px 0 160px;
+    }
+
+    .footer-newsletter {
+        width: 70%;
+    }
+    
+    .footer-company {
+        margin: 55px 0;
+    }
+
+    .footer-company img {
+        width: 64px;
     }
 
 }
