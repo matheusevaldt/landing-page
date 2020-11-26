@@ -21,35 +21,32 @@
 
 :root {
     --green-color: #15C39A;
+    --white-color: #ffffff;
+    --white-text: #ebebeb;
+    --black-text: #2b2839;
+    --black-color: #242424;
+    --greyish-color: #474747;
+    --grey-color: #5c5c5c;
+    --transition: 0.3s linear;
 }
 
 ul {
     list-style: none;
 }
 
-body {
-    overflow-x: hidden;
+button,
+input {
     font-family: 'Montserrat', sans-serif;
-    background-color: #242424;
 }
 
 button {
-    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
 }
 
-.landing-page-wrapper {
-    padding-top: 50px;
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #242424;
-    color: #ebebeb;
-    /* overflow: hidden; */
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--black-color);
 }
 
 header {
@@ -60,7 +57,7 @@ header {
     top: 0;
     z-index: 5;
     background-color: transparent;
-    transition: all 0.3s linear;
+    transition: all var(--transition);
 }
 
 .header-active {
@@ -132,7 +129,7 @@ nav {
     font-size: 1.5em;
     font-weight: 700;
     opacity: 0;
-    color: #ebebeb;
+    color: var(--white-text);
 }
 
 .mobile-menu-items li:last-of-type {
@@ -156,15 +153,15 @@ nav {
     height: 50px;
     border-radius: 50%;
     background-color: rgba(18, 136, 108, 0.5);
-    border: 4px solid #fff;
+    border: 4px solid var(--white-color);
     font-size: 2.1em;
     font-weight: 700;
-    color: #fff;
+    color: var(--white-color);
     opacity: 0;
 }
 
 .display-button-close-mobile-menu {
-    animation: display-button-close-mobile-menu 0.4s linear forwards;
+    animation: display-button-close-mobile-menu var(--transition) forwards;
 }
 
 @keyframes display-button-close-mobile-menu {
@@ -180,6 +177,19 @@ nav {
     width: 100vw;
     background-color: rgba(20, 20, 20, 0.6);
     z-index: -1;
+}
+
+.landing-page-wrapper {
+    padding-top: 50px;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black-color);
+    color: var(--white-text);
 }
 
 .landing-page {
@@ -207,16 +217,18 @@ nav {
 }
 
 .button-learn-more {
-    padding: 10px 16px;
-    font-size: 1em;
+    padding: 12px 25px;
+    font-size: 0.9em;
+    font-weight: 700;
     background-color: var(--green-color);
-    color: #fff;
+    color: var(--white-text);
     border: none;
-    transition: background-color 0.3s ease-out;
+    border-radius: 5px;
+    transition: background-color var(--transition);
 }
 
 .button-learn-more:hover {
-    background-color: rgba(18, 136, 108, 0.8);
+    background-color: #039B77;
 }
 
 .landing-page-art {
@@ -235,8 +247,6 @@ nav {
 
 .first-abstract-shape {
     position: absolute;
-    /* border-top: 1px solid red;
-    border-right: 1px solid red; */
     top: -70px;
     right: 0px;
     z-index: -1;
@@ -246,7 +256,6 @@ nav {
 
 .second-abstract-shape {
     position: absolute;
-    /* border-left: 1px solid red; */
     bottom: 30px;
     left:  0px;
     z-index: -1;
@@ -256,8 +265,8 @@ nav {
 
 .projects {
     padding: 40px 25px;
-    background-color: #474747;
-    color: #ebebeb;
+    background-color: var(--greyish-color);
+    color: var(--white-text);
     text-align: center;
 }
 
@@ -297,15 +306,15 @@ nav {
 }
 
 .project-one {
-    background-image: url("../assets/images/project-one.jpeg");
+    background-image: url("images/project-one.jpeg");
 }
 
 .project-two {
-    background-image: url("../assets/images/project-two.jpg");
+    background-image: url("images/project-two.jpg");
 }
 
 .project-three {
-    background-image: url("../assets/images/project-three.jpg");
+    background-image: url("images/project-three.jpg");
 }
 
 .project-header p {
@@ -321,14 +330,14 @@ nav {
 
 .project-footer {
     padding: 20px 25px;
-    background-color: #fff;
-    color: #2b2839;
+    background-color: var(--white-color);
+    color: var(--black-text);
     text-align: left;
 }
 
 .project-place {
     font-size: 0.9em;
-    color: #5f5f5f;
+    color: var(--grey-color);
 }
 
 .project-footer h1 {
@@ -348,17 +357,17 @@ nav {
 .projects button,
 .partners button {
     padding: 10px 20px;
-    border: 1px solid #242424;
-    border-bottom: 3px solid #242424;
+    border: 1px solid var(--black-color);
+    border-bottom: 3px solid var(--black-color);
     border-radius: 5px;
     background-color: transparent;
-    color: #ebebeb;
+    color: var(--white-text);
     font-weight: 700;
 }
 
 .partners {
-    background-color: #5c5c5c;
-    color: #ebebeb;
+    background-color: var(--grey-color);
+    color: var(--white-text);
     padding: 30px;
     text-align: center;
 }
@@ -391,8 +400,8 @@ nav {
 }
 
 .discord {
-    color: #ebebeb;
-    background-color: #474747;
+    color: var(--white-text);
+    background-color: var(--greyish-color);
     padding: 40px 0 0 0;
     display: flex;
     flex-direction: column;
@@ -436,19 +445,19 @@ nav {
 
 .discord button {
     padding: 10px 20px;
-    border: 1px solid #242424;
-    border-bottom: 3px solid #242424;
+    border: 1px solid var(--black-color);
+    border-bottom: 3px solid var(--black-color);
     border-radius: 5px;
     background-color: transparent;
-    color: #ebebeb;
+    color: var(--white-text);
     font-weight: 700;
     margin: 30px 0;
 }
 
 .founders {
     padding: 30px;
-    background-color: #5c5c5c;
-    color: #ebebeb;
+    background-color: var(--grey-color);
+    color: var(--white-text);
     display: flex;
     flex-direction: column;
 }
@@ -511,7 +520,7 @@ nav {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border: 4px solid #fff;
+    border: 4px solid var(--white-color);
     border-radius: 5px;
     transform: rotate(3deg);
     box-shadow: 0 0px 8px 1px #7c7c7c;
@@ -523,7 +532,7 @@ nav {
     right: 15px;
     font-size: 1.1em;
     font-weight: 700;
-    text-shadow: 2px 2px #242424;
+    text-shadow: 2px 2px var(--black-color);
 }
 
 .founders-connect h1 {
@@ -542,11 +551,11 @@ nav {
 .founders-connect button {
     padding: 10px 0;
     width: 250px;
-    border: 1px solid #242424;
-    border-bottom: 3px solid #242424;
+    border: 1px solid var(--black-color);
+    border-bottom: 3px solid var(--black-color);
     border-radius: 5px;
     background-color: transparent;
-    color: #ebebeb;
+    color: var(--white-text);
     font-weight: 700;
 }
 
@@ -556,8 +565,8 @@ nav {
 
 footer {
     padding: 30px 30px 0 30px;
-    background-color: #474747;
-    color: #ebebeb;
+    background-color: var(--greyish-color);
+    color: var(--white-text);
     border-bottom: 5px solid var(--green-color);
 }
 
@@ -587,7 +596,7 @@ footer {
     margin-bottom: 10px;
     border-radius: 5px;
     font-size: 0.9em;
-    transition: border-color 0.3s linear;
+    transition: border-color var(--transition);
 }
 
 .footer-newsletter button {
@@ -595,14 +604,14 @@ footer {
     font-size: 0.9em;
     font-weight: 700;
     background-color: var(--green-color);
-    color: #ebebeb;
+    color: var(--white-text);
     border: none;
     border-radius: 5px;
 }
 
 .footer-newsletter input:hover,
 .footer-newsletter input:focus {
-    border-color: #474747;
+    border-color: var(--greyish-color);
 }
 
 .footer-socials,
@@ -621,7 +630,7 @@ footer {
     font-size: 0.9em;
     margin-bottom: 15px;
     color: #bebebe;
-    transition: color 0.3s linear;
+    transition: color var(--transition);
     cursor: pointer;
 }
 
@@ -632,7 +641,7 @@ footer {
 
 .footer-socials h2:hover,
 .footer-help h2:hover {
-    color: #ebebeb;
+    color: var(--white-text);
     text-decoration: underline;
 }
 
@@ -669,10 +678,10 @@ footer {
     left: 50%;
     width: 85%;
     transform: translateX(-50%);
-    border: 4px solid #fff;
+    border: 4px solid var(--white-color);
     border-radius: 5px;
     z-index: 10;
-    color: #ebebeb;
+    color: var(--white-text);
     font-weight: 700;
     background-image: linear-gradient(to right, #13b18c, #11a07e, #0f8e70);
     text-align: center;
@@ -680,7 +689,7 @@ footer {
 
 .display-notification {
     display: block;
-    animation: animation-notification 0.3s linear forwards;
+    animation: animation-notification var(--transition) forwards;
 }
 
 @keyframes animation-notification {
@@ -688,8 +697,8 @@ footer {
     to { top: 20px; }
 }
 
-
 /* Media queries */
+
 @media (min-width: 760px) {
 
     .landing-page-wrapper {
@@ -720,8 +729,9 @@ footer {
         margin-right: 8px;
         font-size: 0.9em;
         cursor: pointer;
+        border-radius: 5px;
         transition: background-color 0.3s ease-in;
-        color: #ebebeb;
+        color: var(--white-text);
     }
 
     .desktop-menu li:last-of-type {
@@ -736,8 +746,9 @@ footer {
     .landing-page {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "landing-info landing-art"
-                             "landing-footer landing-footer";
+        grid-template-areas: 
+        "landing-info landing-art"
+        "landing-footer landing-footer";
         padding: 0 40px;
         z-index: 1;
     }
@@ -776,8 +787,9 @@ footer {
         margin-top: 60px;
         grid-area: landing-footer;
         display: grid;
-        grid-template-areas: "footer-image footer-text-one"
-                             "footer-image footer-text-two";
+        grid-template-areas: 
+        "footer-image footer-text-one"
+        "footer-image footer-text-two";
         grid-template-columns: 25% 75%;
         row-gap: 30px;
         column-gap: 20px;
@@ -890,8 +902,6 @@ footer {
         from { top: 0px; }
         to { top: 17px; }
     }
-
-
 }
 
 @media (min-width: 1360px) {
@@ -993,11 +1003,11 @@ footer {
     }
 
     .project-footer h1 {
-        transition: color 0.3s linear;
+        transition: color var(--transition);
     }
 
     .project-footer h1:hover {
-        color: #5c5c5c;
+        color: var(--grey-color);
     }
 
     .projects button {
@@ -1028,17 +1038,17 @@ footer {
     .partners button,
     .discord button,
     .founders-connect button {
-        transition: background-color 0.3s linear;
+        transition: background-color var(--transition);
     }
 
     .projects button:hover,
     .discord button:hover {
-        background-color: #5c5c5c;
+        background-color: var(--grey-color);
     }
 
     .partners button:hover,
     .founders-connect button:hover {
-        background-color: #474747;
+        background-color: var(--greyish-color);
     }
 
     .discord h1 {
@@ -1116,7 +1126,7 @@ footer {
     }
 
     .footer-newsletter button {
-        transition: background-color 0.3s linear;
+        transition: background-color var(--transition);
     }
 
     .footer-newsletter button:hover {
@@ -1137,7 +1147,6 @@ footer {
     }
 
 }
-
 
 @media (min-width: 1600px) {
 

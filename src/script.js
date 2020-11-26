@@ -1,6 +1,7 @@
 // Global variables.
 const header = document.getElementsByTagName('header')[0];
 const nav = header.getElementsByTagName('nav')[0];
+const headerLogo = document.querySelector('.header-logo')
 const mobileMenu = document.querySelector('.mobile-menu');
 const buttonOpenMobileMenu = document.querySelector('.button-open-mobile-menu');
 const buttonCloseMobileMenu = document.querySelector('.button-close-mobile-menu');
@@ -12,6 +13,7 @@ let currentNotification;
 buttonOpenMobileMenu.addEventListener('click', openMobileMenu);
 buttonCloseMobileMenu.addEventListener('click', closeMobileMenu);
 mobileMenuOuter.addEventListener('click', closeMobileMenu);
+headerLogo.addEventListener('click', scrollToTop);
 
 // Functions to be executed when the page is being loaded.
 (function() {
@@ -47,7 +49,7 @@ function displayMobileMenuItems() {
     }
 }
 
-// Close the mobile menu;
+// Close the mobile menu.
 // Set the mobile menu to default state.
 function closeMobileMenu() {
     mobileMenu.classList.remove('open-mobile-menu');
@@ -60,6 +62,15 @@ function clearMobileMenu() {
         mobileMenuItems.children[i].classList.remove('display-mobile-menu-items');
     }
     buttonCloseMobileMenu.classList.remove('display-button-close-mobile-menu');
+}
+
+// Scroll the user to the top of the document.
+function scrollToTop() {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
 }
 
 // Whenever the user clicks in a button or a link, it will display a notification.
